@@ -41,16 +41,35 @@
         }
         function playGame(playerMove){
         
-            const computerMove = pickComputerMove();        
-            
-            if(computerMove === 'rock'){
-                result = 'tie';
-            } else if(computerMove === 'paper') {
-                result = 'You lose.';
-            } else {
-                result = 'You win.';
-            }
-            alert(`You picked rock. Computer picked ${computerMove}. ${result}`);
+                const computerMove = pickComputerMove();        
+
+                if(playerMove === 'rock'){
+                    if(computerMove === 'rock'){
+                        result = 'tie';
+                    } else if(computerMove === 'paper') {
+                        result = 'You lose.';
+                    } else {
+                        result = 'You win.';
+                    }
+                } else if(playerMove === 'paper'){
+                    if(computerMove === 'rock'){
+                        result = 'You win.';
+                    } else if(computerMove === 'paper') {
+                        result = 'tie';
+                    } else {
+                        result = 'You lose.';
+                    }
+                } else {
+                    if(computerMove === 'rock'){
+                        result = 'You lose.';
+                    } else if(computerMove === 'paper') {
+                        result = 'You win.';
+                    } else {
+                        result = 'tie';
+                    }
+                }
+               
+            alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
         }
     </script>
 </body>
