@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    /*
+        true 
+        false
+
+        console.log(3>5-5);         //true
+        console.log(3>5);           //false
+        console.log(3==='3.00');    //false
+        console.log(3=='3.0');      //true
+
+
+        if(30>=16){
+            console.log('hello');
+        }
+        else if(17<=16){
+            console.log('bye');
+        }
+        else{
+            console.log("goodbye");
+        }
+
+        console.log(!0);        //true
+        console.log('text'/5);  //NaN    
+        let h;     
+        const h1;               //can't be empty : 'const h1 = undefined;'
+        console.log(h);          //undefined
+    */
+
+    const t = true?'truthy':'falsy';    //ternary
+    
+    false && console.log('hello');      //guard operator
+    true || console.log('hello');       //default operator
+    
+    const msg1 = false && 'hello';      //false
+    const msg2 = 5 && 'hello';          //hello
+    console.log(msg1);
+    console.log(msg2);
+
+    const msg3 = true || 'hello';      //true
+    const msg4 = 5 || 'hello';         //5
+    const msg5 = undefined || 'hello'; //hello
+    console.log(msg3);
+    console.log(msg4);
+
+    </script>
+
+</body>
+</html>
