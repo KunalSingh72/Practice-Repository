@@ -24,7 +24,7 @@
 
         delete product.newProperty;
         console.log(product);
-*/
+
 
         const product2 = {
             name:'shirt',
@@ -47,6 +47,59 @@
 
 
         console.log(typeof console);
+
+        console.log(JSON.stringify(product2));      //convert object into json object so we can send it to another computer
+
+        console.log(JSON.parse(JSON.stringify(product2)));  //convert back to JS object
+        */
+
+        // console.log(localStorage.getItem('msg'));
+        // localStorage.setItem('msg','hello');
+    
+        console.log('hello'.length);
+        console.log('hello'.toUpperCase());
+        console.log('hello'.toLowerCase());
+
+        const obj1 = {
+            message: 'hello'
+        };
+
+        const obj2 = obj1;
+
+        obj1.message = 'goodjob!';
+        console.log(obj1);
+        console.log(obj2);
+
+        const obj3 = {
+            message: 'goodjob!'
+        };
+
+        console.log(obj1 === obj3);     //false
+        console.log(obj1 === obj2);     //true
+
+        
+        const obj4 = {
+            message: 'hello',
+            price: 344
+        };
+        // const message = obj4.message ;
+        const {message, price} = obj4;
+        console.log(message);
+        console.log(price);
+
+        const obj5 = {
+            // message:message
+            message,
+            // method : function f1(){
+            //     console.log('message');
+            // }
+            method() {
+                console.log('message');
+            }
+        };
+        obj5.method();
+        
+    
     </script>
 </body>
 </html>

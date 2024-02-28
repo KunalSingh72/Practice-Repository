@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+
+    <button>bt1</button>
+    <button class="bt2">bt2</button>
+
+    <script>
+
+
+        console.log(document.querySelector('button').innerHTML);
+        document.querySelector('.bt2')
+          .innerHTML = 'k';
+          buttonElement = document.querySelector('.bt2').innerHTML;
+        console.log(buttonElement);
+
+
+
+
+
+
+
+        /*console.log(document.title);
+        document.title = 'changed';
+
+        console.log(document.body); 
+        console.log(typeof document.body); 
+
+        console.log(document.body.innerHTML);
+        document.body.innerHTML = 'hello';
+        document.body.innerHTML = '<button>hello</button>';
+*/
+
+
+    </script>
+</body>
+</html>
