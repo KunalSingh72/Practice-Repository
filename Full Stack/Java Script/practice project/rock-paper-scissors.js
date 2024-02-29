@@ -54,7 +54,7 @@ document.querySelector('.js-result').innerHTML  = result;
 
 function updateScoreElement(){
     localStorage.setItem('score', JSON.stringify(score));
-    document.querySelector('.js-score').innerHTML  = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+    document.querySelector('.js-score').innerHTML  = `Wins: ${score.wins};</br> Losses: ${score.losses};</br> Ties: ${score.ties};`;
 }
 
   function pickComputerMove() {
