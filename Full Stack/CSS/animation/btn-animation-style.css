@@ -1,0 +1,29 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(255, 227, 232)
+}
+.btn{
+    font-size: 2rem;
+    font-weight: 700;
+    padding:0.5em 1em;
+    color:rgb(243, 101, 124);
+    background-color:rgb(255, 227, 232);
+    border:10px solid rgb(243, 101, 124);
+    border-radius: 5px;
+    cursor: pointer;
+
+    /* transition-property:transform;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+    transition-delay: 0s; */
+
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+.btn:hover{
+    transform: translateY(-7px);
+    background-color: rgb(243, 101, 124);
+    color: white;
+}
