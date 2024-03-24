@@ -3,6 +3,48 @@ let score = JSON.parse(localStorage.getItem('score')) || {
     losses: 0,
     ties: 0
   };
+  updateScoreElement();
+
+  let isAutoPlaying = false;
+  let IntervalId;
+  function autoPlay(){
+    if(!isAutoPlaying){
+      IntervalId = setInterval(() => {
+        const playerMove = pickComputerMove();
+        playGame(playerMove);
+      },1000);
+      isAutoPlaying = true;
+    } else {
+      clearInterval(IntervalId);
+      isAutoPlaying = false;
+    }
+  }
+
+  document.querySelector('.js-rock-button')
+  .addEventListener('click', () => {
+    playGame('rock');
+  });
+
+document.querySelector('.js-paper-button')
+  .addEventListener('click', () => {
+    playGame('paper');
+  });
+
+document.querySelector('.js-scissors-button')
+  .addEventListener('click', () => {
+    playGame('scissors');
+  });
+
+
+  document.body.addEventListener('keydown', (event) => {
+    if (event.key === 'r') {
+      playGame('rock');
+    } else if (event.key === 'p') {
+      playGame('paper');
+    } else if (event.key === 's') {
+      playGame('scissors');
+    }
+  });
   function playGame(playerMove) {
     const computerMove = pickComputerMove();
 
@@ -43,18 +85,22 @@ let score = JSON.parse(localStorage.getItem('score')) || {
     } else if (result === 'Tie.') {
       score.ties += 1;
     }
+    localStorage.setItem('score', JSON.stringify(score));
+    
     updateScoreElement();
+
+    document.querySelector('.js-result').innerHTML = result;
+
     document.querySelector('.js-move').innerHTML  = `You 
-  <img src="images/${playerMove}-emoji.png" class="move-icon">
-  <img src="images/${computerMove}-emoji.png" class="move-icon">
+  <img src="../images/${playerMove}-emoji.png" class="move-icon">
+  <img src="../images/${computerMove}-emoji.png" class="move-icon">
   Computer`;
-document.querySelector('.js-result').innerHTML  = result;
     
 }
 
 function updateScoreElement(){
-    localStorage.setItem('score', JSON.stringify(score));
-    document.querySelector('.js-score').innerHTML  = `Wins: ${score.wins};</br> Losses: ${score.losses};</br> Ties: ${score.ties};`;
+    document.querySelector('.js-score')
+    .innerHTML  = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties};`;
 }
 
   function pickComputerMove() {
