@@ -1,4 +1,4 @@
-// DOM navigation : The process of navigating through the structure of Html doc using javascript
+how// DOM navigation : The process of navigating through the structure of Html doc using javascript
 
 // .firstElementChild
 
