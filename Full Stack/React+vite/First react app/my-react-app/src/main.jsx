@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import './CSS/colorPicker.css'
+import './CSS/stopwatch.css'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(

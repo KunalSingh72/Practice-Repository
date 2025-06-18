@@ -57,7 +57,7 @@
 # Topic 6 : onChange
 
 - Event handler used prmarily with form elements
-- Ex. <input>, <textarea>, <select>, <radio>
+- Ex. < input >, < textarea >, < select >, < radio >
 - trigger a function every time the value of the input changes
 
 ---
@@ -103,3 +103,60 @@ Do :
 
 ## Example : 
 - Reloading the page on website, doing multiple times but done once.
+
+---
+---
+
+# Topic 8 : useEffect() function
+
+- React hook that tells react do some code when (pick one) : 
+    - This Component re-renders
+    - This Component mounts
+    - This state of a value
+
+## useEffect(function, [dependencies])
+
+1. useEffect(() => {}) ---- Runs after every re-render
+2. useEffect(() => {}, []) ---- Runs only on mount
+3. useEffect(() => {}, [value]) ---- Runs on mount + value change
+
+## Uses 
+1. Event Listener
+2. Dom Manipulation
+3. Subscriptions (real-time updates)
+4. Fetching data from an API
+5. Clean up when a component unmounts
+
+---
+---
+
+# Topic 9 : useContext() function
+
+- React Hook that allows you to share values between multiple levels of components without passing props through each level
+
+## Provider Component
+1. import {createContext} from 'react';
+2. export const MyContext = createContext();
+3. <MyContext.Provider value={value}>
+        <child />
+        </MyContext.Provider>
+
+## Consumer Components
+1. import React, {useContext} from 'react';
+    import {MyContext} from './ComponentA';
+2. const value = useContext(MyContext);
+
+---
+---
+
+# Topic 10 : useRef() function 
+
+useState() = Re-renders the component when the state value changes.
+
+useRef() = "use Refernce" does not cause re-renders when its value changes.
+
+- When you want a component to "remember" some information, but you don't want that information to trigger new renders.
+
+1. Accessing/interacting with DOM elements.
+2. Handling Focus, Animation and Transitions.
+3. Managing Timers and intervals.

@@ -1,3 +1,5 @@
+// useState 1
+
 import React, { useState } from "react";
 
 export default function Component2(){
